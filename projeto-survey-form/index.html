@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Survey Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="container">
+    <header>
+      <h1 id="title">freeCodeCamp Survey Form</h1>
+      <p id="description">Projeto de formulário feito como exercício ao freeCodeCamp</p>
+    </header>
+
+    <form id="survey-form">
+      <div>
+        <label id="name-label" for="name">Nome:</label>
+        <input id="name" type="text" name="name" placeholder="Seu nome..." required>
+      </div>
+
+      <div>
+        <label id="email-label" for="email">E-mail:</label>
+        <input type="email" name="email" id="email" placeholder="Seu e-mail..." required>
+      </div>
+
+      <div>
+        <label id="number-label" for="number">Idade:</label>
+        <input type="number" name="number" id="number" placeholder="Sua idade..." min="14" max="99">
+      </div>
+      
+      <div>
+        <p>O que melhor descreve sua função atual?</p>
+        <select name="role" id="dropdown" required>
+          <option disabled selected value="">Selecione uma opção</option>
+          <option value="trabalhador">Trabalhador CLT/PJ/Contrato</option>
+          <option value="estagio">Estágio</option>
+          <option value="estudante">Estudante</option>
+          <option value="outro">Outro</option>
+          <option value="naoDizer">Prefiro não responder</option>
+        </select>
+      </div>
+
+      <div>
+        <p>Você recomendaria o freeCodeCamp à um amigo?</p>
+        <label><input type="radio" name="recomenda" value="comCerteza" checked>Com certeza</label>
+        <label><input type="radio" name="recomenda" value="talvez">Talvez</label>
+        <label><input type="radio" name="recomenda" value="naoSei">Não sei</label>
+      </div>
+
+      <div>
+        <p>O que você gostaria que melhorasse? <span class="check-info">(maque quantos desejar)</span></p>
+        <label><input type="checkbox" name="melhora" value="front-end">Projetos Front-end</label>
+        <label><input type="checkbox" name="melhora" value="back-end">Projetos Back-end</label>
+        <label><input type="checkbox" name="melhora" value="dados">Banco de Dados</label>
+        <label><input type="checkbox" name="melhora" value="desafios">Desafios</label>
+        <label><input type="checkbox" name="melhora" value="openComunidade">Comunidade Open Source</label>
+        <label><input type="checkbox" name="melhora" value="gitter">Salas de Ajuda Gitter</label>
+        <label><input type="checkbox" name="melhora" value="videos">Vídeos</label>
+        <label><input type="checkbox" name="melhora" value="encontros">Encontros na Cidade</label>
+        <label><input type="checkbox" name="melhora" value="wiki">Wiki</label>
+        <label><input type="checkbox" name="melhora" value="forum">Fórum</label>
+        <label><input type="checkbox" name="melhora" value="cursos">Cursos Adicionais</label>
+      </div>
+
+      <div>
+        <p>Comentários ou sugestões?</p>
+        <textarea name="comentario" id="comentarios" placeholder="Escreva seus comentários e sugestões..."></textarea>
+      </div>
+
+      <div>
+        <button type="submit" id="submit">Enviar</button>
+      </div>
+    </form>
+      
+  </main>
+</body>
+</html>

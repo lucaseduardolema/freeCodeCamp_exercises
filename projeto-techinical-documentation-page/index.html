@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tecnical Documentation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav id="navbar">
+    <header>Cascading Style Sheets (CSS)</header>
+    <ul>
+      <li><a class="nav-link" href="#CSS_básico">CSS básico</a></li>
+      <li><a class="nav-link" href="#Como_funciona_o_CSS">Como funciona o CSS</a></li>
+      <li><a class="nav-link" href="#Aplicando_CSS_ao_DOM">Aplicando CSS ao DOM</a></li>
+      <li><a class="nav-link" href="#CSS_não_encontrado?">CSS não encontrado?</a></li>
+      <li><a class="nav-link" href="#E_por_último">E por último</a></li>
+    </ul>
+  </nav>
+  <main id="main-doc">
+    <section id="CSS_básico" class="main-section">
+      <header>
+        CSS básico
+      </header>
+      <p>CSS (Folha de Estilo em Cascata) é o código que você usa para dar estilo à sua página Web. CSS básico apresenta tudo que você precisa para começar.</p>
+      <p>Por exemplo, para selecionar todos os elementos parágrafo de uma página HTML e tornar o texto dentro deles vermelho, você escreveria este CSS:</p>
+      <code>p {
+        color: red;
+      }</code>
+      <ul>
+        <li>Cada linha de comando deve ser envolvida em chaves ({}).</li>
+        <li>Dentro de cada declaração, você deve usar dois pontos (:) para separar a propriedade de seus valores.</li>
+        <li>Dentro de cada conjunto de regras, você deve usar um ponto e vírgula (;) para separar cada declaração da próxima.</li>
+      </ul>
+    </section>
+    <section id="Como_funciona_o_CSS" class="main-section">
+      <header>
+        Como funciona o CSS
+      </header>
+      <p>Quando um navegador redenriza um documento, ele combina o documento com suas informações de estilo. E o documento é processado em estágios, nos quais estão listados abaixo. É sugerível ter em mente que esta é uma versão simplificada do que ocorre quando um navegador redenriza uma página web, e que diferentes navegadores podem manipular estes processos de diferentes formas. De toda forma, esta listagem é muito aproximada do processo comum feito pela maioria dos navegadores.</p>
+      <p>Um DOM uma estrutura árborea (tree-like). Cada elemento, atributo, ou fragmento de texto na linguagem de marcação  (markup language) torna-se um DOM node (nó ou ponto de intersecção) (en-US) na estrutura de árvore. Os nodes (nós) são definidos por meio do relacionamento com outros nodes presentes DOM. Alguns elementos são pais ou superiores a elementos dentro de si (child node, ou em português, nós filhos ou nós secundários), e child nodes possuem elementos irmãos. Compreender o DOM ajuda você organizar, debugar e manter seu CSS porque o DOM é onde seu CSS e o conteúdo do documento são combinados. Quando você começa a trabalhar com as DevTools do browser você estará navegando os elementos do DOM como itens ordenados selecionáveis para assim decidir quais regras de estilização aplicar.</p>
+      <code>span { border: 1px solid black; background-color: lime;}
+      </code>
+      <ul>
+        <li>O navegador carrega o HTML (e.g. que é recebido pela internet).
+          Ele então converte o HTML para um DOM (Document Object Model). O DOM representa o documento na memória do computador. O DOM será também melhor detalhado na próxima seção
+        </li>
+        <li>O navegador então requisita a maioria dos recursos que estão lincados no documento HTML, elementos como imagens
+          encorporadas e vídeos, e também, folhas de estilo CSS. O código em JavaScript é manipulado um pouco mais tarde durante o processo, e não falaremos muito sobre a manipulação do JavaScript agora para mantermos as coisas simples.
+          O navegador analisa o CSS encontrado (fetched) e interpreta as diferentes regras por meio de seus diferentes tipos de seletores em diferentes baldes (buckets), tais como elementos (ex: h1, h2), classes (.myElement), ID (#myNav), e outros mais. Baseado nos seletores encontrados, o navegador insere as regras de estilização que devem ser aplicadas para cada node no DOM, e anexa o estilo para os elementos como foram especificados nas folhas de estilização (este processo intermediário é chamado de render tree ou árvore de renderização).
+        </li>
+        <li>A árvore de renderização é organizada na estrutura e deve aparecer depois das regras de estilo serem aplicadas ao documento. O visual de visualização da página é por fim mostrado na tela (este estágio é chamado de painting ou pintura).
+        </li>
+      </ul>
+    </section>
+    <section id="Aplicando_CSS_ao_DOM" class="main-section">
+      <header>
+        Aplicando CSS ao DOM
+      </header>
+      <p>O browser irá interpretar o HTML e criar um DOM baseado nele. Como a única regra de estilização CSS disponível possui um seletor span, o browser fará a combinação do CSS rapidamente! Ele irá aplicar a regra de estilo para cada um da árvore <span>s, e então paint (pintar) o resultado final na tela.</p>
+      <p>Em nosso artigo Debugging CSS no próximo módulo nós estaremos usando as DevTools do browser para debugar problemas no CSS, e aprenderemos mais sobre como o navegador interpreta o CSS.</p>
+      <code>span { border: 1px solid black; background-color: lime; }</code>
+      <ul>
+        <li>Em nosso artigo Debugging CSS no próximo módulo nós estaremos usando as DevTools do browser para debugar problemas no CSS</li>
+        <li>E aprenderemos mais sobre como o navegador interpreta o CSS</li>
+      </ul>
+    </section>
+    <section id="CSS_não_encontrado?" class="main-section">
+      <header>
+        CSS não encontrado?
+      </header>
+      <p>Em uma lição anterior, eu mencionei que navegadores não implementam todo o novo CSS ao mesmo tempo. Em adição, muitas pessoas não usam a versão mais recente de um navegador. Dado que o CSS é processado o tempo todo, e que portanto está adiantado em relação ao que os browsers podem reconhecer, você pode imaginar o que acontece se um browser encontra um seletor ou uma declaração CSS que ele não reconhece.</p>
+      <p>Se um browser está analisando suas regras, e econtra uma porpriedade ou valor que ele não entende, ele o ignora e segue para a próxima declaração. Ele vai fazer isto se você cometeu algum erro ou digitou incorretamente uma propriedade ou valor, ou se tal propriedade ou valor é recente e o browser ainda não o processa.</p>
+      <p>Similarmente, se um browser encontra um seletor que não comprrende, ele o ignorará e seguirá para a próxima regra.No exemplo abaixo usei a grafia em inglês britânico para a propriedade cor, o que a torna inválida e portanto ela não é reconhecida. Por isso, o parágrafo não recebe a coloração azul. Todos os outros CSS foram aplicados, no entanto, apenas aquele que foi considerado inválido foi ignorado.</p>
+      <code>p { font-weight: bold;
+        colour: blue; /* grafia incorreta da propriedade cor */
+        font-size: 200%;</code>
+      <ul>
+        <li>Este comportamento é bastante útil. Ele significa qeu você pode usar o novo CSS como uma melhoria</li>
+        <li>Em conjunto com a maneira que  a cascata funciona</li>
+        <li>Você pode oferecer alternativas para browsers  que não processa CSS mais novos</li>
+      </ul>
+    </section>
+    <section id="E_por_último" class="main-section">
+      <header>
+        E por último
+      </header>
+      <p>Você está quase encerrando este módulo; só temos mais uma tarefa para fazer. No próximo artigo, você utilizará seu novo conhecimento para reestilizar um exemplo, testando seus aprendizados de CSS no processo.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam a tristique nisi. Fusce vitae scelerisque dolor, sed sodales dui. Ut scelerisque arcu id est malesuada blandit. Pellentesque consequat libero risus, sit amet commodo mi ultrices eget. Duis mollis consequat bibendum. Sed vitae viverra turpis. Nulla pretium sapien sit amet tincidunt ultricies. Nunc laoreet auctor pretium. Phasellus tempus purus ipsum, eget euismod dui sodales non. Aenean accumsan nisi ipsum, eget feugiat leo dictum et. Ut ornare augue a metus vehicula bibendum. Duis placerat dignissim nisl eu facilisis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aliquam hendrerit consectetur tortor, in ullamcorper turpis cursus varius. Praesent ut aliquet ante. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+      <code>var soma = 1 + 1</code>
+      <ul>
+        <li>Quisque vitae vehicula urna. Pellentesque eu placerat tortor. </li>
+        <li>Nam convallis ex arcu, eget rhoncus mi scelerisque quis. </li>
+        <li>Nulla dignissim dolor metus, ac semper odio placerat ullamcorper.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

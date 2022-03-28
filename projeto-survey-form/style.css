@@ -1,0 +1,114 @@
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background: darkblue;
+  background-image: linear-gradient(115deg,
+  rgba(16, 19, 24, 0.712),
+  rgba(3, 3, 196, 0.705)), url(https://blogead.uninassau.edu.br/wp-content/uploads/2020/01/original-d27f0f87da68687d7e5da319cf3d6b1e-780x450.jpg);
+  background-size: cover;
+  background-position: unset;
+  background-repeat: no-repeat;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #eee;
+}
+
+header {
+  text-align: center;
+} 
+
+h1 {
+  font-weight: 400;
+  line-height: 1.2em;
+}
+
+p {
+  font-size: 1.125rem;
+}
+
+h1, p {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+div {
+  margin-bottom: 20px;
+}
+
+#container {
+  width: 100%;
+  margin: 3.125rem auto 0 auto;
+}
+
+#description {
+  font-style: italic;
+}
+
+form {
+  background: rgba(27, 27, 50, 0.8);
+  padding: 40px;
+}
+
+
+#name, #email, #number, #dropdown {
+  width: 100%;
+  min-height: 40px;
+  padding: 15px;
+  font-size: 1.1em;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 576px) {
+  #container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  #container {
+    max-width: 720px;
+  }
+}
+
+.check-info {
+  margin-left: 0.25rem;
+  font-size: 0.9rem;
+}
+
+#comentarios {
+  width: 100%;
+  min-height: 120px;
+  padding: 15px;
+  font-size: 1.1em;
+}
+
+button {
+  border: none;
+}
+
+#submit {
+  margin: 0;
+  width: 100%;
+  min-height: 55px;
+  background-color: rgb(102, 21, 179);
+  color: #eee;
+  font-size: 1.5em;
+  border-radius: 0.5rem;
+}

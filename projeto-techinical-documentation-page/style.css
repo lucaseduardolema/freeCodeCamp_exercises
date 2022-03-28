@@ -1,0 +1,78 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-color: #000;
+  color: #FFF;
+  font-size: 18px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-gap: 20px;
+  grid-template-areas: 
+  "navbar CSS_básico"
+  "navbar Como_funciona_o_CSS"
+  "navbar Aplicando_CSS_ao_DOM"
+  "navbar CSS_não_encontrado?"
+  "navbar E_por_último";
+}
+
+header {
+  font-size: 1.5em;
+  font-style: italic;
+}
+
+a {
+  text-decoration: none;
+  color: #FFF;
+}
+
+code {
+  font-family: monospace;
+  background-color: #f7f7f7;
+  color: #000;
+  padding: 20px !important;
+  margin: 10px;
+  border-radius: 15px;
+}
+
+p {
+  line-height: 1.4em;
+}
+
+#navbar {
+  max-width: 300px;
+  padding-top: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-right: 2px solid #FFF;
+}
+
+#navbar li {
+  list-style: none;
+  padding-top: 50px;
+}
+
+#main-doc {
+  padding-top: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  text-align: justify;
+}
+
+.main-section * {
+  padding: 20px 0 30px 0;
+}
+
+.main-section li {
+  padding: 20px 0 0 0 !important;
+}
+@media (max-width: 375px) {
+  #navbar {
+    display: none;
+  }
+}
